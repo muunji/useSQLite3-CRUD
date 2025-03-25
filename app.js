@@ -26,7 +26,11 @@ app.get('/', (req, res) => {
 app.post('/add', (req, res) => {
   //body = {time: '2025-03-27T15:26',item:'이름'}
   //{date:'2025-03-27',time:'15:26',item:'이름'} 이렇게 만들고 싶음
-  let body = req.body
+  let body = {
+    date: req.body.time.split('T')[0],
+    time: req.body.time.splite('T')[1],
+    itme : req.body.item
+  }
   
 })
 
