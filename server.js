@@ -13,3 +13,6 @@ app.use(express.urlencoded({extended:true}))
 //post 데이터 추가
 
 //서버 실행
+app.listen(8010, () => {
+  console.log('DB 서버 실행 : http://localhost:8010')
+})
