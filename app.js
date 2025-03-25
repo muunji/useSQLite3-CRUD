@@ -23,7 +23,9 @@ app.get('/', (req, res) => {
 //post : form태그로 데이터 받음
 //데이터베이스에 저장
 //html 목록에 출력
-app.post('/add', (req, res) => {
+
+//await을 사용을 위한 async작성
+app.post('/add', async(req, res) => {
   //body = {time: '2025-03-27T15:26',item:'이름'}
   //{date:'2025-03-27',time:'15:26',item:'이름'} 이렇게 만들고 싶음
   let body = {
@@ -35,6 +37,8 @@ app.post('/add', (req, res) => {
   //폼을 제출하면 POST 요청 처리
   //req.body : 폼 데이터 ---fetch---> /create로 전달
   //fetch로 받은 응답 성공시 '/' redirect
+  try { }
+  catch{ }
   
 })
 
