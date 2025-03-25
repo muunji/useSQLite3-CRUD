@@ -11,6 +11,7 @@ export function makeDB() {
       db.run(`
         CREATE TABLE IF NOT EXISTS timeTable (
           id INTERGER PRIMARY KEY AUTOINCREMENT,
+          date TEXT NOT NULL,
           time TEXT NOT NULL,
           item TEXT NOT NULL
         )
