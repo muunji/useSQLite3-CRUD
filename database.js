@@ -8,7 +8,11 @@ export function makeDB() {
       console.log('DB 연결 실패',err)
     } else {
       db.run(`
-        
+        CREATE TABLE IF NOT EXISTS timeTable (
+          id INTERGER PRIMARY KEY AUTOINCREMENT,
+          time TEXT NOT NULL,
+          item TEXT NOT NULL
+        )
         `)
     }
   })
