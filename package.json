@@ -15,5 +15,9 @@
     "url": "https://github.com/muunji/useSQLite3-CRUD/issues"
   },
   "homepage": "https://github.com/muunji/useSQLite3-CRUD#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
 }
