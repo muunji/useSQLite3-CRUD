@@ -58,7 +58,10 @@ app.post('/add', async(req, res) => {
     //리다이렉트
     res.redirect('/')
   }
-  catch{ }
+  catch (error) { 
+    console.log('fetch - DB 과정에서 error 발생', error)
+    res.status(500).send('DB 저장 실패')
+  }
   
 })
 
