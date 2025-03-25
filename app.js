@@ -15,6 +15,9 @@ app.use(express.urlencoded({extended:true}))
 import { makeDB } from './database.js'
 makeDB()
 
+//fetch 사용을 위한 모듈
+import fetch from 'node-fetch'
+
 //get /
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'index.html'))
@@ -30,9 +33,11 @@ app.post('/add', async(req, res) => {
   //{date:'2025-03-27',time:'15:26',item:'이름'} 이렇게 만들고 싶음
   let body = {
     date: req.body.time.split('T')[0],
-    time: req.body.time.splite('T')[1],
-    itme : req.body.item
+    time: req.body.time.split('T')[1],
+    item : req.body.item
   }
+
+  console.log(body)
   
   //폼을 제출하면 POST 요청 처리
   //req.body : 폼 데이터 ---fetch---> /create로 전달
