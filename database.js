@@ -7,16 +7,23 @@ export function makeDB() {
     if (err) {
       console.log('DB 연결 실패',err)
     } else {
+      //테이블 생성
       db.run(`
         CREATE TABLE IF NOT EXISTS timeTable (
           id INTERGER PRIMARY KEY AUTOINCREMENT,
           time TEXT NOT NULL,
           item TEXT NOT NULL
         )
-        `)
+        `, (err) => {
+        if (err) {
+          console.log('DB timeTable 생성 실패',err)
+        } else {
+          console.log('DB timeTable 생성 성공')
+        }
+        })
     }
   })
-  
-  //테이블 생성
+  //닫아줌
+  db.close()
   
 }
