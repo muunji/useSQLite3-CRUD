@@ -38,6 +38,8 @@ app.post('/add', async(req, res) => {
   //req.body : 폼 데이터 ---fetch---> /create로 전달
   //fetch로 받은 응답 성공시 '/' redirect
   try { 
+    //await : fetch가 완료될 때까지 대기
+    //데이터를 JSON으로 변환해서 url로 보냄
     const response = await fetch('http://localhost:8010/create', {
       method: 'POST',
       headers: {
