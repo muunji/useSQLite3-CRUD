@@ -1,6 +1,15 @@
 //express 가져오기
+import express from 'express'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.join(__filename)
+
+const app = express()
 //express 파싱을 위한 미들웨어
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 //데이터베이스 연결
 
