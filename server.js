@@ -39,7 +39,9 @@ app.get('/read', (req, res) => {
     if (err) {
       return res.status(500).send('데이터 조회 실패')
     }
-    console.log('데이터 조회 성공',rows)
+    console.log('데이터 조회 성공', rows)
+    // 클라이언트로 JSON 형태로 응답
+    res.json(rows)
   })
 })
 
