@@ -12,6 +12,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 //데이터베이스 연결
+import { makeDB } from './database.js'
+makeDB()
 
 //get /
 app.get('/', (req, res) => {
