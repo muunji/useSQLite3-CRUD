@@ -18,9 +18,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'index.html'))
 })
 
-//데이터
-let data = []
-
 //post : form태그로 데이터 받음
 //데이터베이스에 저장
 //html 목록에 출력
