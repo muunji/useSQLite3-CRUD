@@ -11,9 +11,9 @@ app.use(express.urlencoded({extended:true}))
 //데이터베이스 연결
 const db = new sqlite3.Database('data.db', (err) => {
   if (err) {
-    console.log('DB서버에서 DB 연결 실패',err)
+    console.log('DB서버 - DB 연결 실패',err)
   } else {
-    console.log('DB서버에서 DB 연결 성공')
+    console.log('DB서버 - DB 연결 성공')
   }
 })
 
@@ -21,13 +21,16 @@ const db = new sqlite3.Database('data.db', (err) => {
 app.post('/create', (req, res) => {
   //클라이언트에서 보낸 데이터를 DB에 저장하는 엔드포인트
   const data = req.body;
-  console.log('DB서버 req.body', data)
+  console.log('DB서버 - req.body', data)
   
   //데이터 추가
   db.run(`INSERT INTO timeTable (date,time,item) VALUES (?,?,?)`, [date, time, item], function (err) {
     if (err) {
-      
+      console.error('DB서버 - DB 저장 실패 : ', err)
+      res.status(500).send('DB서버 - DB 저장 실패')
+      return
     }
+    console.log('DB서버 - DB 저장 성공',this.lastID)
   })
 })
 
