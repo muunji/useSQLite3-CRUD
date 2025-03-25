@@ -33,6 +33,12 @@ app.post('/create', (req, res) => {
   })
 })
 
+//get 데이터 조회, url: /read
+
+//put 데이서 수정, url : /update/:id
+
+//delete 데이터 삭제, url: /delete/:id
+
 //서버 실행
 app.listen(8010, () => {
   console.log('DB 서버 실행 : http://localhost:8010')
