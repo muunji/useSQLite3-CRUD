@@ -52,6 +52,11 @@ app.post('/add', async(req, res) => {
     if (!response.ok) {
       throw new Error('HTTP 에러',response.status)
     }
+
+    //성공했을 시
+    console.log('fetch - DB 저장 성공')
+    //리다이렉트
+    res.redirect('/')
   }
   catch{ }
   
