@@ -37,7 +37,15 @@ app.post('/add', async(req, res) => {
   //폼을 제출하면 POST 요청 처리
   //req.body : 폼 데이터 ---fetch---> /create로 전달
   //fetch로 받은 응답 성공시 '/' redirect
-  try { }
+  try { 
+    const response = await fetch('http://localhost:8010/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({date : body.date, time:body.time, item : body.item})
+    })
+  }
   catch{ }
   
 })
