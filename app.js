@@ -4,7 +4,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.join(__filename)
+const __dirname = path.dirname(__filename)
 
 const app = express()
 //express 파싱을 위한 미들웨어
@@ -12,6 +12,11 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 //데이터베이스 연결
+
+//get /
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname,'index.html'))
+})
 
 //post : form태그로 데이터 받음
 //데이터베이스에 저장
@@ -26,3 +31,6 @@ app.use(express.urlencoded({extended:true}))
 //html목록에서 수정됨
 
 //서버 실행
+app.listen(3030, () => {
+  console.log('서버실행 : http://localhost:3030')
+})
