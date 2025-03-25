@@ -1,5 +1,10 @@
 function readDB() {
-  
+  fetch('http://localhost:8010/read')
+    .then(res => res.json())
+    .then(data => {
+      makeList(data)
+    })
+    .catch(err => console.error('readDB에서 데이터 불러오기 실패',err))
 }
 
 function makeList(data) {
@@ -28,4 +33,6 @@ function makeBtn(text,callback,liTag) {
 }
 
 function updateDB(data) { }
-function deleteDB(data){}
+function deleteDB(data) { }
+
+readDB()
