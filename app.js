@@ -32,6 +32,10 @@ app.post('/add', (req, res) => {
     itme : req.body.item
   }
   
+  //폼을 제출하면 POST 요청 처리
+  //req.body : 폼 데이터 ---fetch---> /create로 전달
+  //fetch로 받은 응답 성공시 '/' redirect
+  
 })
 
 //수정
