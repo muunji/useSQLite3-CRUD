@@ -47,6 +47,11 @@ app.post('/add', async(req, res) => {
       },
       body: JSON.stringify({date : body.date, time:body.time, item : body.item})
     })
+
+    //fetch 요청이 성공적이지 못할 때 실행
+    if (!response.ok) {
+      throw new Error('HTTP 에러',response.status)
+    }
   }
   catch{ }
   
