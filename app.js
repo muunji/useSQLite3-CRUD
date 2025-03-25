@@ -25,7 +25,10 @@ let data = []
 //데이터베이스에 저장
 //html 목록에 출력
 app.post('/add', (req, res) => {
+  //body = {time: '2025-03-27T15:26',item:'이름'}
+  //{date:'2025-03-27',time:'15:26',item:'이름'} 이렇게 만들고 싶음
   let body = req.body
+  
 })
 
 //수정
