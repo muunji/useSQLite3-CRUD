@@ -17,7 +17,19 @@ const db = new sqlite3.Database('data.db', (err) => {
   }
 })
 
-//post 데이터 추가
+//post 데이터 추가, url : /create
+app.post('/create', (req, res) => {
+  //클라이언트에서 보낸 데이터를 DB에 저장하는 엔드포인트
+  const data = req.body;
+  console.log('DB서버 req.body', data)
+  
+  //데이터 추가
+  db.run(`INSERT INTO timeTable (date,time,item) VALUES (?,?,?)`, [date, time, item], function (err) {
+    if (err) {
+      
+    }
+  })
+})
 
 //서버 실행
 app.listen(8010, () => {
