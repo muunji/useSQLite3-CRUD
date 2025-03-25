@@ -10,7 +10,7 @@ export function makeDB() {
       //테이블 생성
       db.run(`
         CREATE TABLE IF NOT EXISTS timeTable (
-          id INTERGER PRIMARY KEY AUTOINCREMENT,
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
           date TEXT NOT NULL,
           time TEXT NOT NULL,
           item TEXT NOT NULL
