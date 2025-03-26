@@ -45,7 +45,7 @@ function deleteDB(event) {
   const id = button.parentElement.dataset.id
   console.log('id:',id)
 
-  fetch(`http://localhost:8010/delete/:${id}`, {
+  fetch(`http://localhost:8010/delete/${id}`, {
     method:'DELETE'
   })
     .then(res => res.text())
