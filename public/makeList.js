@@ -36,6 +36,10 @@ function makeBtn(text,callback,liTag) {
 }
 
 function updateDB(data) { }
-function deleteDB(data) { }
+
+//삭제 버튼 실행 함수
+function deleteDB(data) { 
+
+}
 
 readDB()
