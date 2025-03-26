@@ -58,7 +58,15 @@ app.put('/update/:id', (req, res) => {
 
 //delete 데이터 삭제, url: /delete/:id
 app.delete('/delete/:id', (req, res) => {
-  
+  const id = req.params.id
+
+  //데이터 삭제 실행
+  db.run('DELETE FROM timeTable WHERE id = ? ', [id], (err) => {
+    if (err) {
+      return res.status(500).send('DB 삭제 실패')
+    }
+    res.send('DB 삭제 성공')
+  })
 })
 
 //서버 실행
