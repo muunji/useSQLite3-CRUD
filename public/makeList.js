@@ -23,13 +23,13 @@ function makeList(data,ul) {
   //수정 버튼
   const updateBtn = makeBtn('수정',updateDB(data),li)
   //삭제 버튼
-  const deleteBtn = makeBtn('삭제', deleteDB(data), li)
+  makeBtn('삭제', deleteDB, li)
 }
 
 function makeBtn(text,callback,liTag) {
   const btn = document.createElement('button')
   btn.textContent = text
-  btn.addEventListener('click', callback)
+  btn.addEventListener('click',(e)=> callback(e))
   liTag.appendChild(btn)
 
   return btn
@@ -43,7 +43,14 @@ function deleteDB(event) {
   //btn.addEventLister(e=>deleteDB(e))
   const button = event.target;
   const id = button.parentElement.dataset.id
+  console.log('id:',id)
 
+  fetch(`http://localhost:8010/delete/:${id}`, {
+    method:'DELETE'
+  })
+    .then(res => res.text())
+    .then(()=> readDB())
+  .catch(err=> console.error('DB 데이터 삭제 실패',err))
 
 }
 
