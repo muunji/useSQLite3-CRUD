@@ -2,14 +2,17 @@ function readDB() {
   fetch('http://localhost:8010/read')
     .then(res => res.json())
     .then(data => {
-      data.forEach(i => console.log(i))
+      const ul = document.getElementsByTagName('ul')[0]
+      ul.innerHTML=''
+      data.forEach(i => {
+        
+        makeList(i,ul)
+      })
     })
     .catch(err => console.error('readDB에서 데이터 불러오기 실패',err))
 }
 
-function makeList(data) {
-  const ul = document.getElementsByTagName('ul')[0]
-  ul.innerHTML=''
+function makeList(data,ul) {
 
   //목록으로 들어갈 li 태그
   const li = document.createElement('li')
