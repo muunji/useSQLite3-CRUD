@@ -49,9 +49,11 @@ app.get('/read', (req, res) => {
   })
 })
 
-//put 데이서 수정, url : /update/:id
+//put 데이터 수정, url : /update/:id
 app.put('/update/:id', (req, res) => {
-  
+  const origin = {
+    
+  }
 })
 
 //delete 데이터 삭제, url: /delete/:id
