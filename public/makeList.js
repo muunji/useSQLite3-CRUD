@@ -38,7 +38,11 @@ function makeBtn(text,callback,liTag) {
 function updateDB(data) { }
 
 //삭제 버튼 실행 함수
-function deleteDB(data) { 
+function deleteDB(button) { 
+  //id값을 가져와야함 -> fetch에 적용시켜야함
+  //btn.addEventLister(e=>deleteDB(e))
+  const button = e.target;
+  
 
 }
 
