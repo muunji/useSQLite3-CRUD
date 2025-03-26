@@ -2,6 +2,7 @@
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import cors from 'cors'; // CORS 미들웨어 가져오기
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -10,6 +11,9 @@ const app = express()
 //express 파싱을 위한 미들웨어
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+
+// CORS 설정 추가
+app.use(cors()); // 모든 도메인에서의 요청 허용
 
 // 정적 파일 제공 설정
 app.use(express.static(path.join(__dirname, 'public'))); // 'public' 폴더를 정적 파일 경로로 설정

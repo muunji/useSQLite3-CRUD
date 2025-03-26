@@ -1,9 +1,13 @@
 //데이터베이스 서버
 import express from 'express'
 import sqlite3 from 'sqlite3'
+import cors from 'cors'; // CORS 미들웨어 가져오기
 
 //express 가져옴
 const app = express()
+
+// CORS 설정 추가
+app.use(cors()); // 모든 도메인에서의 요청 허용
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))

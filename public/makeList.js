@@ -2,7 +2,7 @@ function readDB() {
   fetch('http://localhost:8010/read')
     .then(res => res.json())
     .then(data => {
-      makeList(data)
+      data.forEach(i => console.log(i))
     })
     .catch(err => console.error('readDB에서 데이터 불러오기 실패',err))
 }
