@@ -35,7 +35,7 @@ app.post('/create', (req, res) => {
 
 //get 데이터 조회, url: /read
 app.get('/read', (req, res) => {
-  db.run(`SELECT * FROM timeTable`, (err, rows) => {
+  db.all(`SELECT * FROM timeTable`, (err, rows) => {
     if (err) {
       return res.status(500).send('데이터 조회 실패')
     }
