@@ -52,11 +52,14 @@ app.get('/read', (req, res) => {
 //put 데이터 수정, url : /update/:id
 app.put('/update/:id', (req, res) => {
   const origin = {
-    
+
   }
 })
 
 //delete 데이터 삭제, url: /delete/:id
+app.delete('/delete/:id', (req, res) => {
+  
+})
 
 //서버 실행
 app.listen(8010, () => {
