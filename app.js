@@ -12,12 +12,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 // 정적 파일 제공 설정
-// app.use(express.static(path.join(__dirname, 'public'))); // 'public' 폴더를 정적 파일 경로로 설정
+app.use(express.static(path.join(__dirname, 'public'))); // 'public' 폴더를 정적 파일 경로로 설정
 
-// 특정 파일 제공 설정
-app.get('/makeList.js', (req, res) => {
-  res.sendFile(path.join(__dirname, 'makeList.js')); // makeList.js 파일의 정확한 경로를 지정
-});
+
 
 //데이터베이스 연결
 import { makeDB } from './database.js'
