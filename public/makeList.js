@@ -48,20 +48,31 @@ function updateDB(event) {
   //수정창에 기존 데이터 넣어줌
   putOriginToForm(id)
 
+  document.querySelector('div#edit > button').addEventListener('click', () => {
+    closeEditForm()
+  
+    //inputdata 가져오기
+    const editInput = document.querySelectorAll('div#edit > input')
+    finishEdit(editInput,id)
+  })
 }
 //div#edit창의 수정버튼을 눌렀을 때 실행함수
-function finishEdit() {
+function finishEdit(input,id) {
   //fetch로 app.update와 연결해줘야함
-  // fetch(`http://localhost:8010/update/${id}`, {
-  //   method: 'PUT',
-  //   headers: {
-  //     'Content-Type':'application/json'
-  //   },
-  //   body: JSON.stringify({date : })
-  // })
-  //   .then(res => res.text())
-  //   .then(() => readDB())
-  //   .catch(err=> console.error('DB 데이터 수정 실패',err))
+  fetch(`http://localhost:8010/update/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify({
+      date: input[0].value.split('T')[0],
+      time: input[0].value.split('T')[1],
+      item: input[1].value
+    })
+  })
+    .then(res => res.text())
+    .then(() => readDB())
+    .catch(err=> console.error('DB 데이터 수정 실패',err))
   
 }
 //삭제 버튼 실행 함수
@@ -116,7 +127,6 @@ function closeEditForm() {
   document.getElementById('edit').style.display='none'
 }
 
-document.querySelector('div#edit > button').addEventListener('click',closeEditForm)
 
 //페이지 로드하면 함수 실행
 readDB()
