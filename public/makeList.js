@@ -43,6 +43,7 @@ function updateDB(event) {
   //e.target이 포함된 요소의 id값 = 기존값 찾기
   const id = getID(event)
 
+
   //새로운 데이터를 입력할 창을 보여줘야함
 }
 
@@ -68,10 +69,12 @@ function getID(event) {
 }
 
 //수정 창에 기존 데이터 넣어주는 함수
-function putOriginToForm(event) {
+function putOriginToForm(id) {
+  //수정해줄 내용 가져오기
+  // fetch(`http://localhost:8010/read/${id}`, {
+  //   method : {}
+  // })
   //input창 가져오기
-
-  //수정해줄 내용이 있는 li 태그 가져오기
 
   //input value에 기본 내용 넣어주기
 }
@@ -81,4 +84,7 @@ function displayEditForm() {
   //div edit display로 보여주기
 }
 
+//페이지 로드하면 함수 실행
 readDB()
+//추가 버튼 눌렀을 때도 함수 실행
+
