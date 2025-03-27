@@ -50,7 +50,9 @@ app.get('/read', (req, res) => {
 })
 
 //get 특정 데이터 조회, url : /read/:id
-
+app.get('/read/:id', (req, res) => {
+  
+})
 
 //put 데이터 수정, url : /update/:id
 app.put('/update/:id', (req, res) => {
