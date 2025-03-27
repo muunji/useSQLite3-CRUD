@@ -49,6 +49,12 @@ function updateDB(event) {
   putOriginToForm(id)
 
   //fetch로 app.delete와 연결해줘야함
+  fetch(`http://localhost:8010/update/${id}`, {
+    method:'PUT'
+  })
+    .then(res => res.text())
+    .then(() => readDB())
+    .catch(err=> console.error('DB 데이터 수정 실패',err))
 }
 
 //삭제 버튼 실행 함수

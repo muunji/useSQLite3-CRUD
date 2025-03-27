@@ -53,9 +53,9 @@ app.get('/read', (req, res) => {
 //get 특정 데이터 조회, url : /read/:id
 app.get('/read/:id', (req, res) => {
   const id = req.params.id
-  db.run(`SLECT * FROM timeTable WHERE id = ?`, [id], (err,rows) => {
+  db.run(`SELECT * FROM timeTable WHERE id = ?`, [id], (err,rows) => {
     if (err) {
-      return res.status(500).send(`${id} 데이터 조회 실패`)
+      return res.status(500).send(`특정 데이터 조회 실패`)
     }
     console.log(`${id} 데이터 조회 성공`)
     //클라이언트로 JSON 형태로 응답
@@ -74,7 +74,7 @@ app.put('/update/:id', (req, res) => {
     item: req.body.item
   }
 
-  db.run(`UPDATE FROM timeTable SET date = ? , text = ? , item = ? WHERE id = ?`, [newest.date, newest.text, newest.item, origin.id], (err) => {
+  db.run(`UPDATE timeTable SET date = ? , time = ? , item = ? WHERE id = ?`, [newest.date, newest.time, newest.item, origin.id], (err) => {
     if (err) {
       return res.status(500).send('DB 수정 실패')
     }
