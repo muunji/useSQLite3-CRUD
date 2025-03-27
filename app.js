@@ -82,6 +82,20 @@ app.post('/add', async(req, res) => {
 //수정
 //특정 데이터베이스 조회
 //html목록에 수정됨
+app.post('/edit', async(req, res) => {
+  let body = {
+    date: req.body.time.split('T')[0],
+    time: req.body.time.split('T')[1],
+    item : req.body.item
+  }
+
+  try {
+    
+  }
+  catch (err) {
+    
+  }
+})
 
 //삭제
 //특정 데이터베이스 삭제
