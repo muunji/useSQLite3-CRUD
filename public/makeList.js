@@ -68,13 +68,17 @@ function getID(event) {
 }
 
 //수정 창에 기존 데이터 넣어주는 함수
-function putOriginToForm() {
-  //
+function putOriginToForm(event) {
+  //input창 가져오기
+
+  //수정해줄 내용이 있는 li 태그 가져오기
+
+  //input value에 기본 내용 넣어주기
 }
 
 //div#edit창을 보여주는 함수
 function displayEditForm() {
-  
+  //div edit display로 보여주기
 }
 
 readDB()
