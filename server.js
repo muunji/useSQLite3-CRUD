@@ -34,6 +34,7 @@ app.post('/create', (req, res) => {
       return
     }
     console.log('DB서버 - DB 저장 성공',this.lastID)
+    res.status(200).send('DB 저장 성공'); // 응답 추가
   })
 })
 
