@@ -52,7 +52,10 @@ app.get('/read', (req, res) => {
 //put 데이터 수정, url : /update/:id
 app.put('/update/:id', (req, res) => {
   const origin = {
-
+    id: req.params.id,
+    date:req.body.date,
+    text:req.body.date,
+    item: req.body.item
   }
 })
 
