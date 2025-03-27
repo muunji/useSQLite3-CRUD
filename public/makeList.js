@@ -91,6 +91,12 @@ function putOriginToForm(id) {
 //div#edit창을 보여주는 함수
 function displayEditForm() {
   //div edit display로 보여주기
+  document.getElementById('edit').style.display = 'block'
+}
+
+//닫기 버튼 클릭 이벤트 실행 함수
+function closeEditForm() {
+  document.getElementById('edit').style.display='none'
 }
 
 //페이지 로드하면 함수 실행
