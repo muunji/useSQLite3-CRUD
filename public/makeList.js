@@ -67,4 +67,14 @@ function getID(event) {
   return event.target.parentElement.dataset.id
 }
 
+//수정 창에 기존 데이터 넣어주는 함수
+function putOriginToForm() {
+  //
+}
+
+//div#edit창을 보여주는 함수
+function displayEditForm() {
+  
+}
+
 readDB()
