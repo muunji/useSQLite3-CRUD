@@ -65,7 +65,12 @@ app.put('/update/:id', (req, res) => {
     item: req.body.item
   }
 
-  db.run(`UPDATE FROM timeTable SET date = ? , text = ? , item = ? WHERE id = ?`,[newest.date,newest.text,newest.item,origin.id],)
+  db.run(`UPDATE FROM timeTable SET date = ? , text = ? , item = ? WHERE id = ?`, [newest.date, newest.text, newest.item, origin.id], (err) => {
+    if (err) {
+      return res.status(500).send('DB 수정 실패')
+    }
+    res.send('DB 수정 성공')
+  })
 })
 
 //delete 데이터 삭제, url: /delete/:id
