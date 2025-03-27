@@ -71,12 +71,20 @@ function getID(event) {
 //수정 창에 기존 데이터 넣어주는 함수
 function putOriginToForm(id) {
   //수정해줄 내용 가져오기
-  // fetch(`http://localhost:8010/read/${id}`, {
-  //   method : {}
-  // })
-  //input창 가져오기
+  fetch(`http://localhost:8010/read/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      let origin = {
+        date: data.date,
+        time: data.time,
+        item: data.item
+      }
+      //input창 가져오기
+      const editInput = document.querySelectorAll('div#edit > input')
+      //input value에 기본 내용 넣어주기
+      
+    })
 
-  //input value에 기본 내용 넣어주기
 }
 
 //div#edit창을 보여주는 함수
@@ -86,5 +94,3 @@ function displayEditForm() {
 
 //페이지 로드하면 함수 실행
 readDB()
-//추가 버튼 눌렀을 때도 함수 실행
-
