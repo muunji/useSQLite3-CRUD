@@ -35,7 +35,7 @@ function makeBtn(text,callback,liTag) {
   return btn
 }
 
-//수정 버튼 실행 함수
+//li 태그의 수정 버튼 실행 함수
 function updateDB(event) { 
   //id값을 가져와서 데이터베이스 삭제
   //btn.addEventListener(e=>updateDB(e))
@@ -48,15 +48,22 @@ function updateDB(event) {
   //수정창에 기존 데이터 넣어줌
   putOriginToForm(id)
 
-  //fetch로 app.delete와 연결해줘야함
-  fetch(`http://localhost:8010/update/${id}`, {
-    method:'PUT'
-  })
-    .then(res => res.text())
-    .then(() => readDB())
-    .catch(err=> console.error('DB 데이터 수정 실패',err))
 }
-
+//div#edit창의 수정버튼을 눌렀을 때 실행함수
+function finishEdit() {
+  //fetch로 app.update와 연결해줘야함
+  // fetch(`http://localhost:8010/update/${id}`, {
+  //   method: 'PUT',
+  //   headers: {
+  //     'Content-Type':'application/json'
+  //   },
+  //   body: JSON.stringify({date : })
+  // })
+  //   .then(res => res.text())
+  //   .then(() => readDB())
+  //   .catch(err=> console.error('DB 데이터 수정 실패',err))
+  
+}
 //삭제 버튼 실행 함수
 function deleteDB(event) { 
   //id값을 가져와야함 -> fetch에 적용시켜야함
