@@ -39,7 +39,10 @@ function makeBtn(text,callback,liTag) {
 function updateDB(data) { 
   //id값을 가져와서 데이터베이스 삭제
   //btn.addEventListener(e=>updateDB(e))
-  
+
+  //e.target이 포함된 요소의 id값 = 기존값 찾기
+
+  //새로운 데이터를 입력할 창을 보여줘야함
 }
 
 //삭제 버튼 실행 함수
