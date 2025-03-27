@@ -47,6 +47,8 @@ function updateDB(event) {
 
   //수정창에 기존 데이터 넣어줌
   putOriginToForm(id)
+
+  //fetch로 app.delete와 연결해줘야함
 }
 
 //삭제 버튼 실행 함수
