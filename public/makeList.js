@@ -101,5 +101,7 @@ function closeEditForm() {
   document.getElementById('edit').style.display='none'
 }
 
+document.querySelector('div#edit > button').addEventListener('click',closeEditForm)
+
 //페이지 로드하면 함수 실행
 readDB()
