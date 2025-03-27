@@ -70,7 +70,7 @@ app.put('/update/:id', (req, res) => {
   }
   const newest = {
     date:req.body.date,
-    text:req.body.date,
+    time:req.body.time,
     item: req.body.item
   }
 
