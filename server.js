@@ -64,6 +64,8 @@ app.put('/update/:id', (req, res) => {
     text:req.body.date,
     item: req.body.item
   }
+
+  db.run(`UPDATE FROM timeTable SET date = ? , text = ? , item = ? WHERE id = ?`,[newest.date,newest.text,newest.item,origin.id],)
 })
 
 //delete 데이터 삭제, url: /delete/:id
