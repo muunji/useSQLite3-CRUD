@@ -21,7 +21,7 @@ function makeList(data,ul) {
   ul.appendChild(li)
 
   //수정 버튼
-  const updateBtn = makeBtn('수정',updateDB(data),li)
+  makeBtn('수정',updateDB,li)
   //삭제 버튼
   makeBtn('삭제', deleteDB, li)
 }
@@ -35,12 +35,17 @@ function makeBtn(text,callback,liTag) {
   return btn
 }
 
-function updateDB(data) { }
+//수정 버튼 실행 함수
+function updateDB(data) { 
+  //id값을 가져와서 데이터베이스 삭제
+  //btn.addEventListener(e=>updateDB(e))
+  
+}
 
 //삭제 버튼 실행 함수
 function deleteDB(event) { 
   //id값을 가져와야함 -> fetch에 적용시켜야함
-  //btn.addEventLister(e=>deleteDB(e))
+  //btn.addEventListener(e=>deleteDB(e))
   const button = event.target;
   const id = button.parentElement.dataset.id
   console.log('id:',id)
@@ -50,7 +55,7 @@ function deleteDB(event) {
   })
     .then(res => res.text())
     .then(()=> readDB())
-  .catch(err=> console.error('DB 데이터 삭제 실패',err))
+    .catch(err=> console.error('DB 데이터 삭제 실패',err))
 
 }
 
