@@ -42,9 +42,11 @@ function updateDB(event) {
 
   //e.target이 포함된 요소의 id값 = 기존값 찾기
   const id = getID(event)
-
-
   //새로운 데이터를 입력할 창을 보여줘야함
+  displayEditForm()
+
+  //수정창에 기존 데이터 넣어줌
+  putOriginToForm(id)
 }
 
 //삭제 버튼 실행 함수
