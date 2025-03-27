@@ -36,11 +36,13 @@ function makeBtn(text,callback,liTag) {
 }
 
 //수정 버튼 실행 함수
-function updateDB(data) { 
+function updateDB(event) { 
   //id값을 가져와서 데이터베이스 삭제
   //btn.addEventListener(e=>updateDB(e))
 
   //e.target이 포함된 요소의 id값 = 기존값 찾기
+  const button = event.target
+  const id = button.parentElement.dataset.id
 
   //새로운 데이터를 입력할 창을 보여줘야함
 }
@@ -49,8 +51,7 @@ function updateDB(data) {
 function deleteDB(event) { 
   //id값을 가져와야함 -> fetch에 적용시켜야함
   //btn.addEventListener(e=>deleteDB(e))
-  const button = event.target;
-  const id = button.parentElement.dataset.id
+  const id = getID(event)
   console.log('id:',id)
 
   fetch(`http://localhost:8010/delete/${id}`, {
@@ -60,6 +61,10 @@ function deleteDB(event) {
     .then(()=> readDB())
     .catch(err=> console.error('DB 데이터 삭제 실패',err))
 
+}
+
+function getID(event) {
+  return event.target.parentElement.dataset.id
 }
 
 readDB()
