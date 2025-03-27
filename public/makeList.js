@@ -41,8 +41,7 @@ function updateDB(event) {
   //btn.addEventListener(e=>updateDB(e))
 
   //e.target이 포함된 요소의 id값 = 기존값 찾기
-  const button = event.target
-  const id = button.parentElement.dataset.id
+  const id = getID(event)
 
   //새로운 데이터를 입력할 창을 보여줘야함
 }
@@ -63,6 +62,7 @@ function deleteDB(event) {
 
 }
 
+//버튼이 포함된 <li></li>태그에서 data-id 값 가져오기
 function getID(event) {
   return event.target.parentElement.dataset.id
 }
