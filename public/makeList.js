@@ -82,7 +82,8 @@ function putOriginToForm(id) {
       //input창 가져오기
       const editInput = document.querySelectorAll('div#edit > input')
       //input value에 기본 내용 넣어주기
-      
+      editInput[0].value = `${origin.date}T${origin.time}`
+      editInput[1].value = origin.item
     })
 
 }
