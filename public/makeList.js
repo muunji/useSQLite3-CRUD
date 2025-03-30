@@ -116,6 +116,7 @@ function putOriginToForm(id) {
       //input value에 기본 내용 넣어주기
       editInput[0].value = `${origin.date}T${origin.time}`
       editInput[1].value = origin.item
+      editInput[2].value = id
     })
 
 }
