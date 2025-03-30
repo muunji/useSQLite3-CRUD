@@ -53,7 +53,7 @@ app.get('/read', (req, res) => {
 //get 특정 데이터 조회, url : /read/:id
 app.get('/read/:id', (req, res) => {
   const id = req.params.id
-  db.run(`SELECT * FROM timeTable WHERE id = ?`, [id], (err,rows) => {
+  db.get(`SELECT * FROM timeTable WHERE id = ?`, [id], (err,rows) => {
     if (err) {
       return res.status(500).send(`특정 데이터 조회 실패`)
     }
