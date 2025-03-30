@@ -91,20 +91,30 @@ app.post('/edit', async(req, res) => {
   }
   console.log(req.body)
   try {
-    const response = await fetch(`http://localhost:8010/update/${id}`,{
+    const response = await fetch(`http://localhost:8010/update/${body.id}`,{
       method:'PUT',
       headers: {
         'Content-Type' : 'application/json'
       },
       body : JSON.stringify({
         date: body.date,
-        tiem:body.time,
+        time:body.time,
         item:body.item
       })
     })
+
+    //fetch 요청이 성공적이지 못할 때
+    if(!response.ok){
+      throw new Error('HTTP 에러',response.status)
+    }
+
+    //성공했을 시
+    console.log('DB 수정 성공')
+    res.redirect('/')
   }
   catch (err) {
-    
+    console.log('DB 수정 실패',err)
+    res.status(500).send('DB 수정 실패')
   }
 })
 
