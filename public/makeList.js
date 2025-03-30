@@ -50,10 +50,6 @@ function updateDB(event) {
 
   document.querySelector('div#edit > button').addEventListener('click', () => {
     closeEditForm()
-  
-    //inputdata 가져오기
-    const editInput = document.querySelectorAll('div#edit > input')
-    finishEdit(editInput,id)
   })
 }
 //div#edit창의 수정버튼을 눌렀을 때 실행함수
@@ -130,3 +126,6 @@ function closeEditForm() {
 
 //페이지 로드하면 함수 실행
 readDB()
+
+//수정버튼 클릭 이벤트
+
