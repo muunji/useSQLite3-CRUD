@@ -86,11 +86,22 @@ app.post('/edit', async(req, res) => {
   let body = {
     date: req.body.time.split('T')[0],
     time: req.body.time.split('T')[1],
-    item : req.body.item
+    item : req.body.item,
+    id : req.body.id
   }
-
+  console.log(req.body)
   try {
-    const response = await fetch()
+    const response = await fetch(`http://localhost:8010/update/${id}`,{
+      method:'PUT',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify({
+        date: body.date,
+        tiem:body.time,
+        item:body.item
+      })
+    })
   }
   catch (err) {
     
